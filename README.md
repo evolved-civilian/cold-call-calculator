@@ -7,6 +7,4 @@ Here are the main files and their purposes:
 3. script.js: This JavaScript file will contain the logic for our cold call calculation.
 4. package.json: This file will contain the metadata about the app and its dependencies.
 
-Let's start with the HTML file:
-
-index.html
+This project was made using SuperAGI. 
