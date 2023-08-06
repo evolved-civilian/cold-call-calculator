@@ -1,0 +1,22 @@
+const puppeteer = require('puppeteer');
+
+test('form submits and displays correct calculation', async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('http://localhost:3000');
+
+  await page.click('input#income');
+  await page.type('input#income', '344000');
+  await page.click('input#commission');
+  await page.type('input#commission', '1000');
+  await page.click('input#rate');
+  await page.type('input#rate', '0.06');
+  await page.click('input#days');
+  await page.type('input#days', '300');
+  await page.click('button#submit');
+
+  const result = await page.$eval('.result', el => el.textContent);
+  expect(result).toBe('You need to make approximately 19.11 calls per day.');
+
+  browser.close();
+});

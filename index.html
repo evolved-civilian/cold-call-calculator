@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cold Call Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Cold Call Calculator</h1>
+    <form id="calculator-form">
+        <label for="income">Annual Desired Income:</label>
+        <input type="number" id="income" required>
+        <label for="commission">Commission Per Sale:</label>
+        <input type="number" id="commission" required>
+        <label for="closing-rate">Closing Rate:</label>
+        <input type="number" id="closing-rate" required>
+        <label for="days-worked">Number of Days Worked:</label>
+        <input type="number" id="days-worked" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="results">
+        <h2>Results:</h2>
+        <p id="calls-per-day"></p>
+        <p id="calls-per-day-10x"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+document.getElementById('calculator-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var income = document.getElementById('income').value;
+    var commission = document.getElementById('commission').value;
+    var closingRate = document.getElementById('closing-rate').value / 100;
+    var daysWorked = document.getElementById('days-worked').value;
+
+    var salesRequired = income / commission;
+    var contacts = salesRequired / closingRate;
+    var contactsPerDay = contacts / daysWorked;
+    var tenxCalls = contactsPerDay * 10;
+
+    document.getElementById('calls').textContent = 'You need to make ' + Math.ceil(contactsPerDay) + ' calls per day.';
+    document.getElementById('tenx-calls').textContent = 'To follow the 10x principle, you need to make ' + Math.ceil(tenxCalls) + ' calls per day.';
+    document.getElementById('recommendations').textContent = 'To increase email and text sign ups, consider using growth hacking strategies such as offering incentives for sign ups, using social proof, or creating a sense of urgency.';
+});

@@ -1,0 +1,17 @@
+const calculateCalls = require('./calculateCalls');
+
+test('calculates number of calls correctly', () => {
+  expect(calculateCalls(344000, 1000, 0.06, 300)).toBeCloseTo(19.11);
+});
+
+test('calculates 10x calls correctly', () => {
+  expect(calculateCalls(344000, 1000, 0.06, 300, true)).toBeCloseTo(191);
+});
+
+test('throws error when input is not a number', () => {
+  expect(() => calculateCalls('344000', 1000, 0.06, 300)).toThrow('Input must be a number');
+});
+
+test('throws error when input is negative', () => {
+  expect(() => calculateCalls(-344000, 1000, 0.06, 300)).toThrow('Input must be a positive number');
+});

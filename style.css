@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#calculator-form {
+    margin-bottom: 2em;
+}
+
+#calculator-form label,
+#calculator-form input {
+    display: block;
+    margin-bottom: 1em;
+}
+
+#results {
+    display: none;
+}

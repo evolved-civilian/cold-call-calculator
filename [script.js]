@@ -1,0 +1,18 @@
+document.getElementById('calculation-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var income = document.getElementById('income').value;
+    var commission = document.getElementById('commission').value;
+    var closingRate = document.getElementById('closing-rate').value / 100;
+    var daysWorked = document.getElementById('days-worked').value;
+
+    var salesRequired = income / commission;
+    var contacts = salesRequired / closingRate;
+    var contactsPerDay = contacts / daysWorked;
+    var callsPerDay10x = contactsPerDay * 10;
+
+    document.getElementById('calls-per-day').innerText = 'You need to make ' + contactsPerDay.toFixed(2) + ' calls per day.';
+    document.getElementById('calls-per-day-10x').innerText = 'For the 10x principle, you need to make ' + callsPerDay10x.toFixed(2) + ' calls per day.';
+
+    document.getElementById('result').style.display = 'block';
+});
